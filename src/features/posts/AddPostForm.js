@@ -18,33 +18,39 @@ export default function AddPostForm() {
       setUserId('');
     }
   };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    onSave();
+  };
 
   return (
     <section>
       <h2>Add a New Post</h2>
-      <input
-        id="postTitle"
-        placeholder="Post title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <select
-        id="postAuthor"
-        value={userId}
-        onChange={(e) => setUserId(e.target.value)}
-      >
-        <option value="">Select Author</option>
-        {users.map((u) => (
-          <option key={u.id} value={u.id}>{u.name}</option>
-        ))}
-      </select>
-      <textarea
-        id="postContent"
-        placeholder="Post content"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <button onClick={onSave}>Save Post</button>
+      <form onSubmit={onSubmit}>
+        <input
+          id="postTitle"
+          placeholder="Post title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <select
+          id="postAuthor"
+          value={userId}
+          onChange={(e) => setUserId(e.target.value)}
+        >
+          <option value="">Select Author</option>
+          {users.map((u) => (
+            <option key={u.id} value={u.id}>{u.name}</option>
+          ))}
+        </select>
+        <textarea
+          id="postContent"
+          placeholder="Post content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+        <button type="submit">Save Post</button>
+      </form>
     </section>
   );
 }

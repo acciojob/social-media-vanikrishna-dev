@@ -17,9 +17,9 @@ const App = () => {
           <div className="container">
             <h1>GenZ</h1>
             <nav>
-              <Link to="/">Posts</Link>
-              <Link to="/users">Users</Link>
-              <Link to="/notifications">Notifications</Link>
+              <Link to="/" data-cy="nav-posts">Posts</Link>
+              <Link to="/users" data-cy="nav-users">Users</Link>
+              <Link to="/notifications" data-cy="nav-notifications">Notifications</Link>
             </nav>
           </div>
         </header>

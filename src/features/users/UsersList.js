@@ -7,7 +7,7 @@ export default function UsersList() {
   const users = useSelector(selectAllUsers);
   return (
     <section>
-      <h2>Users</h2>
+  <h2>All Users</h2>
       <ul>
         {users.map((user) => (
           <li key={user.id}>
